@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2023 at 08:14 AM
+-- Generation Time: Jun 11, 2023 at 05:04 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -40,10 +40,12 @@ CREATE TABLE `akun` (
 --
 
 INSERT INTO `akun` (`userid`, `pass`, `nama`, `email`, `status`) VALUES
+('1', '1', '1', '1', 'pembeli'),
 ('admin1', '1111', 'Tito Darmawan', '', 'admin'),
-('manager1', '1111', 'Tito Darmawan', 'null', 'manager'),
+('Man1', '1111', 'Tito Darmawan', 'null', 'manager'),
 ('pem1', '1111', 'Tito Darmawan', '-', 'pembeli'),
 ('pem2', '1111', 'Cia', '-', 'pembeli'),
+('Pem3', '1111', 'Test', '-', 'pembeli'),
 ('staff1', '1111', 'Tito Darmawan', 'null', 'staff'),
 ('staff2', '1111', 'Cia', 'null', 'staff');
 
@@ -66,8 +68,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kode`, `nama`, `kodeP`, `harga`, `stok`) VALUES
-('ac12', 'AC Dingin Sekali', 'apak1', 8000, 3),
-('hg12', 'Handheld GPS mk12', 'uuc1', 10000, 1);
+('ac12', 'T11 Pro', 'apak1', 5900000, 7),
+('hg12', 'J2 Prime', 'uuc1', 2500000, 3);
 
 -- --------------------------------------------------------
 
@@ -89,8 +91,9 @@ CREATE TABLE `pembelian` (
 INSERT INTO `pembelian` (`idPembelian`, `userid`, `total`, `status`) VALUES
 (6, 'pem1', 10000, 'selsai'),
 (7, 'pem1', 24000, 'selsai'),
-(8, 'pem1', 46000, 'diproses'),
-(9, 'pem2', 18000, 'diproses');
+(8, 'pem1', 46000, 'selsai'),
+(9, 'pem2', 18000, 'diproses'),
+(10, 'pem1', 29500000, 'diproses');
 
 -- --------------------------------------------------------
 
@@ -116,7 +119,8 @@ INSERT INTO `pesanan` (`idPesanan`, `idPembelian`, `kodeBarang`, `jumlah`, `subt
 (8, 8, 'hg12', 3, 30000),
 (9, 8, 'ac12', 2, 16000),
 (10, 9, 'hg12', 1, 10000),
-(11, 9, 'ac12', 1, 8000);
+(11, 9, 'ac12', 1, 8000),
+(12, 10, 'ac12', 5, 29500000);
 
 -- --------------------------------------------------------
 
@@ -137,8 +141,8 @@ CREATE TABLE `produsen` (
 
 INSERT INTO `produsen` (`kodeP`, `produsen`, `alamat`, `kontak`) VALUES
 ('-', '-', '-', '-'),
-('apak1', 'AntiPanasAntiKeringat', 'dimana', '0091'),
-('uuc1', 'Utillity Universal Corps', 'Everywhere', '91091');
+('apak1', 'XIAOMI', 'China', '12121'),
+('uuc1', 'Samsung', 'Singapore', '2222S');
 
 --
 -- Indexes for dumped tables
@@ -186,13 +190,13 @@ ALTER TABLE `produsen`
 -- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
-  MODIFY `idPembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idPembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pesanan`
 --
 ALTER TABLE `pesanan`
-  MODIFY `idPesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idPesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
