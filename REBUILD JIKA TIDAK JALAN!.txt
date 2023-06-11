@@ -1,0 +1,5 @@
+Rebuild projek java jika tidak bisa di run (Kemungkinan file target terbelakang)
+pastikan projek di buka di folder root (UAS)
+
+Nama : Tito Darmawan
+NIM  : 2109106042
